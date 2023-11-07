@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="content">
       <div class="left">
-        <p>&copy; {{ new Date().getFullYear() }} Evanora Mirrordale's Reflective Realms</p>
+        <p>&copy; {{ new Date().getFullYear() + " " + currentFooterText }}</p>
       </div>
     </div>
   </footer>
@@ -10,6 +10,28 @@
 
 <script setup>
 // If you have any specific logic for your footer, you can add it here.
+
+const { locale } = useI18n()
+
+const currentFooterText = computed(() => {
+  if (locale.value)
+  {
+    if (locale.value == 'en')
+    {
+      return "Evanora Mirrordale's Reflective Realms"
+    }
+    else 
+    {
+      return "Reinos Reflexivos de Evanora Mirrordale"
+    }
+  }
+  else 
+  {
+    return "Evanora Mirrordale's Reflective Realms"
+  }
+})
+
+
 </script>
 
 <style scoped>

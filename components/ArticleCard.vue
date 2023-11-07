@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-      :to="'/' + slug"
+      :to="localePath(`/${slug}`)"   
       v-editable="article"
       class="w-full h-full border rounded-[5px] text-left overflow-hidden"
     >
@@ -25,4 +25,6 @@
 const props = defineProps({ article: Object, slug: String })
 
 const article = computed(() => props.article ?? props.article)
+
+const localePath = useLocalePath()
 </script>

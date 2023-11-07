@@ -10,13 +10,16 @@
         <h2 class="text-2xl text-gray-500 font-bold mb-4">
           {{ blok.description }}
         </h2>
-        <div class="text-gray-600 mb-3">Written by: <b>{{ blok.author }}</b></div>
+        <div class="text-gray-600 mb-3">{{ locale.value == 'en' ? "Written by:" : "Por:" }} <b>{{ blok.author }}</b></div>
         <div v-html="resolvedRichText"></div>
       </div>
     </div>
 </template>
 
 <script setup>
+
+  const { locale } = useI18n()
+
   const props = defineProps({ blok: Object })
 
   const resolvedRichText = computed(() => props.blok.content ?? renderRichText(props.blok.content));

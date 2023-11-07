@@ -1,3 +1,38 @@
+<script lang="ts" setup>
+const localePath = useLocalePath()
+
+const { locale, locales } = useI18n()
+
+const switchLocalePath = useSwitchLocalePath()
+
+ 
+
+const availableLocales = computed(() => {
+
+  return (locales.value).filter(i => i.code !== locale.value)
+
+})
+
+const currentLang = computed(() => {
+  if (locale.value)
+  {
+    if (locale.value == 'en')
+    {
+      return 'About Me'
+    }
+    else 
+    {
+      return 'Sobre Mim'
+    }
+  }
+  else 
+  {
+    return 'About Me'
+  }
+})
+
+</script>
+
 <template>
   <header class="header">
     <div class="content">
@@ -10,8 +45,17 @@
           <!-- <li>
             <NuxtLink to="/" class="nav-link">Blog</NuxtLink>
           </li> -->
+          <li class="nav-link" v-for="lang in availableLocales" :key="lang">
+
+            <NuxtLink :to="switchLocalePath(lang)" class="uppercase">
+
+              {{ lang }}
+
+            </NuxtLink>
+
+          </li>
           <li>
-            <NuxtLink to="/about-evanora" class="nav-link">About Me</NuxtLink>
+            <NuxtLink :to="localePath('/about-evanora')" class="nav-link">{{ currentLang }}</NuxtLink>
           </li>
         </ul>
       </nav>
