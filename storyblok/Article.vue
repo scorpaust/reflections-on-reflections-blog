@@ -1,5 +1,5 @@
 <template>
-    <div v-editable="blok">
+    <div v-editable="blok" class="mx-8>
       <img
         :src="blok.image.filename + '/m/1600x0'"
         :alt="blok.image.alt"
