@@ -16,6 +16,6 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Reflections on Reflections Blog by Evanora Mirrordale',
   twitterDescription: 'Join Evanora Mirrordale as she explores the unspoken narratives behind our reflections.',
-  twitterImage: 'https://a.storyblok.com/f/260985/4743x3162/99951cb3af/pexels-jenna-hamra-804416.jpg'
+  twitterImage: 'https://a.storyblok.com/f/260985/4743x3162/99951cb3af/pexels-jenna-hamra-804416.jpg',
 })
 </script>
