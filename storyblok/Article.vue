@@ -1,7 +1,7 @@
 <template>
-    <div v-editable="blok" class="mx-8>
+    <div v-editable="blok" class="mx-8">
       <img
-        :src="blok.image.filename + "'/m/1600x0'"
+        :src="blok.image.filename + '/m/1600x0'"
         :alt="blok.image.alt"
         class="mx-auto w-3/4 object-cover"
       />
