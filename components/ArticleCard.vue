@@ -33,7 +33,7 @@ const localePath = useLocalePath()
 const localeRoute = useLocaleRoute()
 
 const linkPath = computed(() => {
-  const route = localeRoute(`/slug`, locale.value)
+  const route = localeRoute("slug", locale.value)
   return route != null ? route.path : '/'
 })
 </script>
