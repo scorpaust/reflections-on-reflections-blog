@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-      :to="linkPath"   
+      :to="localePath(`/${slug}`)"   
       v-editable="article"
       class="w-full h-full border rounded-[5px] text-left overflow-hidden"
     >
@@ -32,8 +32,4 @@ const localePath = useLocalePath()
 
 const localeRoute = useLocaleRoute()
 
-const linkPath = computed(() => {
-  const route = localeRoute(slug, locale.value)
-  return route != null ? route.path : '/'
-})
 </script>
