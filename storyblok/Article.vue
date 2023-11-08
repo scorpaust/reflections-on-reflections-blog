@@ -33,7 +33,7 @@
       }
       else 
       {
-        return "Por "
+        return "Por: "
       }
     }
   })
